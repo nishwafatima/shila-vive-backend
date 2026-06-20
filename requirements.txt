@@ -1,4 +1,4 @@
-fastapi==0.111.0
-razorpay==1.4.2
-pydantic[email]==2.7.1
-setuptools>=70.0.0
+fastapi
+razorpay
+pydantic
+setuptools
