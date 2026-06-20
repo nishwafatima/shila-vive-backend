@@ -10,7 +10,7 @@ verification is stateless (HMAC). But /orders will be unreliable. For real
 order records, either rely on the Razorpay Dashboard, or wire a DB
 (Upstash Redis / MongoDB Atlas / Supabase) in the marked spots below.
 """
-
+import setuptools  # noqa: F401  — provides pkg_resources for razorpay
 from fastapi import FastAPI, HTTPException, Request
 from fastapi.middleware.cors import CORSMiddleware
 from pydantic import BaseModel
