@@ -38,6 +38,10 @@ class CreateOrderRequest(BaseModel):
     name:     str
     email:    str
     phone:    str
+    address:  str = ""   # ADD
+    city:     str = ""   # ADD
+    pincode:  str = ""   # ADD
+    state:    str = ""   # ADD
 
 class VerifyPaymentRequest(BaseModel):
     razorpay_order_id:   str
@@ -47,6 +51,10 @@ class VerifyPaymentRequest(BaseModel):
     email:    str
     phone:    str
     quantity: int
+    address:  str = ""   # ADD
+    city:     str = ""   # ADD
+    pincode:  str = ""   # ADD
+    state:    str = ""   # ADD
 
 @app.get("/")
 def root():
@@ -79,6 +87,10 @@ def create_order(req: CreateOrderRequest):
             "phone":      req.phone,
             "status":     "created",
             "created_at": datetime.now().isoformat(),
+            "address":  req.address,   # ADD
+            "city":     req.city,      # ADD
+            "pincode":  req.pincode,   # ADD
+            "state":    req.state,     # ADD
         }
         return {
             "order_id":     rzp_order["id"],
